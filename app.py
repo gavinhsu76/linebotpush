@@ -15,7 +15,7 @@ cloudinary.config(
     api_secret=os.getenv("CLOUDINARY_API_SECRET", "QOK6x6BKAcoWuXaIQSih-Txk8p8")
 )
 
-CHANNEL_ACCESS_TOKEN = os.getenv("Ag0RQgh92gLb0shB4NSncDyUol/HUIvDThofPFaK9gNpx1qbk2c2st56W12s1rXS2Fh/7XZLGmR+JDO6rZccgjGlwHfiJqJiTPLowA94sNVAoqwMhJWyjPjIEj8uj7PHUA4O5i7KhI/IAkhyaWzF5AdB04t89/1O/w1cDnyilFU=")
+CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", "Ag0RQgh92gLb0shB4NSncDyUol/HUIvDThofPFaK9gNpx1qbk2c2st56W12s1rXS2Fh/7XZLGmR+JDO6rZccgjGlwHfiJqJiTPLowA94sNVAoqwMhJWyjPjIEj8uj7PHUA4O5i7KhI/IAkhyaWzF5AdB04t89/1O/w1cDnyilFU=")
 USER_ID = os.getenv("LINE_USER_ID", "Uf51ffd305ce026921198cca620f8b554")
 
 @app.route('/')
@@ -96,6 +96,7 @@ headers = {
         # 將完整錯誤顯示於 logs
         print("ERROR in /push:", repr(e))
         return jsonify({"ok": False, "error": str(e)}), 500
+
 
 
 
