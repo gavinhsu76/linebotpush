@@ -72,7 +72,7 @@ def push_message():
             raise RuntimeError("Cloudinary 回傳沒有 secure_url")
 
         # (6) 傳送 LINE 推播（push）
-        headers = {
+headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {CHANNEL_ACCESS_TOKEN}"
         }
@@ -96,6 +96,7 @@ def push_message():
         # 將完整錯誤顯示於 logs
         print("ERROR in /push:", repr(e))
         return jsonify({"ok": False, "error": str(e)}), 500
+
 
 
 
